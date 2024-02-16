@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: 01 - staging
+    database: final-project-df11
+    schema: dbt_final_project_g4
+
+    tables:
+      - name: raw_data_project

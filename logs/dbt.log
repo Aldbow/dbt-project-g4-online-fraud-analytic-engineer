@@ -1,0 +1,1502 @@
+[0m16:34:57.224316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92f4a3b220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92f2a633d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92f2a63370>]}
+
+
+============================== 16:34:57.227107 | d8bcbbb5-f189-4e27-a5b1-ba031915bf7e ==============================
+[0m16:34:57.227107 [info ] [MainThread]: Running with dbt=1.7.0
+[0m16:34:57.227708 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'debug': 'False', 'profiles_dir': '/home/avalon/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:34:57.228216 [info ] [MainThread]: dbt version: 1.7.0
+[0m16:34:57.228635 [info ] [MainThread]: python version: 3.10.12
+[0m16:34:57.229043 [info ] [MainThread]: python path: /home/avalon/Data-Fellowship-11/dbt_env/dbt/bin/python
+[0m16:34:57.229460 [info ] [MainThread]: os info: Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m16:34:58.068606 [info ] [MainThread]: Using profiles dir at /home/avalon/.dbt
+[0m16:34:58.069643 [info ] [MainThread]: Using profiles.yml file at /home/avalon/.dbt/profiles.yml
+[0m16:34:58.070273 [info ] [MainThread]: Using dbt_project.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/dbt_project.yml
+[0m16:34:58.075061 [info ] [MainThread]: adapter type: bigquery
+[0m16:34:58.075738 [info ] [MainThread]: adapter version: 1.7.0
+[0m16:34:58.233990 [info ] [MainThread]: Configuration:
+[0m16:34:58.234589 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:34:58.235022 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:34:58.235433 [info ] [MainThread]: Required dependencies:
+[0m16:34:58.235887 [debug] [MainThread]: Executing "git --help"
+[0m16:34:58.254471 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:34:58.255047 [debug] [MainThread]: STDERR: "b''"
+[0m16:34:58.255475 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:34:58.255897 [info ] [MainThread]: Connection:
+[0m16:34:58.256331 [info ] [MainThread]:   method: service-account
+[0m16:34:58.256734 [info ] [MainThread]:   database: final-project-df11
+[0m16:34:58.257159 [info ] [MainThread]:   execution_project: final-project-df11
+[0m16:34:58.257593 [info ] [MainThread]:   schema: dbt_final_project_g4
+[0m16:34:58.258027 [info ] [MainThread]:   location: US
+[0m16:34:58.258462 [info ] [MainThread]:   priority: interactive
+[0m16:34:58.258880 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m16:34:58.259335 [info ] [MainThread]:   impersonate_service_account: None
+[0m16:34:58.259769 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m16:34:58.260213 [info ] [MainThread]:   job_retries: 1
+[0m16:34:58.260661 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m16:34:58.261088 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m16:34:58.261514 [info ] [MainThread]:   keyfile: \\wsl.localhost\Ubuntu-22.04\home\avalon\Data-Fellowship-11\dbt_env\service-accounts\service-account-g4-dbt.json
+[0m16:34:58.261939 [info ] [MainThread]:   timeout_seconds: 300
+[0m16:34:58.262359 [info ] [MainThread]:   refresh_token: None
+[0m16:34:58.262778 [info ] [MainThread]:   client_id: None
+[0m16:34:58.263195 [info ] [MainThread]:   token_uri: None
+[0m16:34:58.263616 [info ] [MainThread]:   dataproc_region: None
+[0m16:34:58.264036 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m16:34:58.264517 [info ] [MainThread]:   gcs_bucket: None
+[0m16:34:58.264945 [info ] [MainThread]:   dataproc_batch: None
+[0m16:34:58.265512 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m16:34:58.266422 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m16:34:58.266863 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:34:58.267417 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery client: '[Errno 2] No such file or directory: '\\\\wsl.localhost\\Ubuntu-22.04\\home\\avalon\\Data-Fellowship-11\\dbt_env\\service-accounts\\service-account-g4-dbt.json''
+[0m16:34:58.267874 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m16:34:58.268312 [info ] [MainThread]: [31m1 check failed:[0m
+[0m16:34:58.268744 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  [Errno 2] No such file or directory: '\\\\wsl.localhost\\Ubuntu-22.04\\home\\avalon\\Data-Fellowship-11\\dbt_env\\service-accounts\\service-account-g4-dbt.json'
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m16:34:58.270170 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 1.0988764, "process_user_time": 3.53997, "process_kernel_time": 0.749993, "process_mem_max_rss": "162396", "process_in_blocks": "8", "process_out_blocks": "16", "command_success": false}
+[0m16:34:58.271128 [debug] [MainThread]: Command `dbt debug` failed at 16:34:58.270918 after 1.10 seconds
+[0m16:34:58.272093 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m16:34:58.273230 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92f4a3b220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92da599f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92da599f90>]}
+[0m16:34:58.274270 [debug] [MainThread]: Flushing usage events
+[0m17:06:32.220961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b79f37370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b77fe3400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b77fe33d0>]}
+
+
+============================== 17:06:32.224694 | 46630958-53a6-4f4e-a625-8e3f9f610f09 ==============================
+[0m17:06:32.224694 [info ] [MainThread]: Running with dbt=1.7.0
+[0m17:06:32.225541 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'debug': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:06:32.226263 [info ] [MainThread]: dbt version: 1.7.0
+[0m17:06:32.226882 [info ] [MainThread]: python version: 3.10.12
+[0m17:06:32.228322 [info ] [MainThread]: python path: /home/avalon/Data-Fellowship-11/dbt_env/dbt/bin/python
+[0m17:06:32.229432 [info ] [MainThread]: os info: Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m17:06:32.234792 [info ] [MainThread]: Using profiles dir at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4
+[0m17:06:32.235312 [info ] [MainThread]: Using profiles.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/profiles.yml
+[0m17:06:32.235755 [info ] [MainThread]: Using dbt_project.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/dbt_project.yml
+[0m17:06:32.351463 [info ] [MainThread]: Configuration:
+[0m17:06:32.352643 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m17:06:32.353200 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m17:06:32.353731 [info ] [MainThread]: Required dependencies:
+[0m17:06:32.354288 [debug] [MainThread]: Executing "git --help"
+[0m17:06:32.357324 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:06:32.358032 [debug] [MainThread]: STDERR: "b''"
+[0m17:06:32.358500 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:06:32.359130 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m17:06:32.359693 [info ] [MainThread]: [31m1 check failed:[0m
+[0m17:06:32.360167 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'final_project_dbt_group4'
+
+
+[0m17:06:32.361270 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.2059551, "process_user_time": 2.607081, "process_kernel_time": 0.129854, "process_mem_max_rss": "91100", "process_out_blocks": "24", "command_success": false, "process_in_blocks": "0"}
+[0m17:06:32.361954 [debug] [MainThread]: Command `dbt debug` failed at 17:06:32.361787 after 0.21 seconds
+[0m17:06:32.362396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b79f37370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b77e787f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8b77e7b850>]}
+[0m17:06:32.362858 [debug] [MainThread]: Flushing usage events
+[0m17:06:40.633690 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m17:08:49.175837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb50e95a4a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb50c9e3430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb50c9e33d0>]}
+
+
+============================== 17:08:49.179319 | fe2e5c45-c00e-48a6-9037-1299c00653e6 ==============================
+[0m17:08:49.179319 [info ] [MainThread]: Running with dbt=1.7.0
+[0m17:08:49.180273 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:08:49.181071 [info ] [MainThread]: dbt version: 1.7.0
+[0m17:08:49.181695 [info ] [MainThread]: python version: 3.10.12
+[0m17:08:49.182241 [info ] [MainThread]: python path: /home/avalon/Data-Fellowship-11/dbt_env/dbt/bin/python
+[0m17:08:49.182817 [info ] [MainThread]: os info: Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m17:08:49.188691 [info ] [MainThread]: Using profiles dir at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4
+[0m17:08:49.190592 [info ] [MainThread]: Using profiles.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/profiles.yml
+[0m17:08:49.192365 [info ] [MainThread]: Using dbt_project.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/dbt_project.yml
+[0m17:08:49.353123 [info ] [MainThread]: Configuration:
+[0m17:08:49.354265 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m17:08:49.355088 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m17:08:49.356773 [info ] [MainThread]: Required dependencies:
+[0m17:08:49.358518 [debug] [MainThread]: Executing "git --help"
+[0m17:08:49.364429 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:08:49.365406 [debug] [MainThread]: STDERR: "b''"
+[0m17:08:49.365955 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:08:49.366543 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m17:08:49.367113 [info ] [MainThread]: [31m1 check failed:[0m
+[0m17:08:49.367644 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'final_project_dbt_group4'
+
+
+[0m17:08:49.369180 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.2606273, "process_user_time": 2.994155, "process_kernel_time": 0.110152, "process_mem_max_rss": "91216", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m17:08:49.370204 [debug] [MainThread]: Command `dbt debug` failed at 17:08:49.369949 after 0.26 seconds
+[0m17:08:49.370921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb50e95a4a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb50c986b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb50c9e2440>]}
+[0m17:08:49.371728 [debug] [MainThread]: Flushing usage events
+[0m17:09:00.891113 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m17:09:31.170131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faaeec57370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faaecce3400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faaecce33a0>]}
+
+
+============================== 17:09:31.176100 | 737dd387-68a0-4d44-a910-1fea309d6213 ==============================
+[0m17:09:31.176100 [info ] [MainThread]: Running with dbt=1.7.0
+[0m17:09:31.176847 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'version_check': 'True', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:09:31.177430 [info ] [MainThread]: dbt version: 1.7.0
+[0m17:09:31.177892 [info ] [MainThread]: python version: 3.10.12
+[0m17:09:31.178579 [info ] [MainThread]: python path: /home/avalon/Data-Fellowship-11/dbt_env/dbt/bin/python
+[0m17:09:31.179411 [info ] [MainThread]: os info: Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m17:09:32.176075 [info ] [MainThread]: Using profiles dir at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4
+[0m17:09:32.177105 [info ] [MainThread]: Using profiles.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/profiles.yml
+[0m17:09:32.177724 [info ] [MainThread]: Using dbt_project.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/dbt_project.yml
+[0m17:09:32.179546 [info ] [MainThread]: adapter type: bigquery
+[0m17:09:32.180441 [info ] [MainThread]: adapter version: 1.7.0
+[0m17:09:32.301844 [info ] [MainThread]: Configuration:
+[0m17:09:32.302487 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:09:32.302969 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m17:09:32.303404 [info ] [MainThread]: Required dependencies:
+[0m17:09:32.303870 [debug] [MainThread]: Executing "git --help"
+[0m17:09:32.306496 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:09:32.307081 [debug] [MainThread]: STDERR: "b''"
+[0m17:09:32.307487 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:09:32.307961 [info ] [MainThread]: Connection:
+[0m17:09:32.308500 [info ] [MainThread]:   method: service-account
+[0m17:09:32.308992 [info ] [MainThread]:   database: final-project-df11
+[0m17:09:32.309516 [info ] [MainThread]:   execution_project: final-project-df11
+[0m17:09:32.309997 [info ] [MainThread]:   schema: dbt_final_project_g4
+[0m17:09:32.310435 [info ] [MainThread]:   location: None
+[0m17:09:32.310918 [info ] [MainThread]:   priority: interactive
+[0m17:09:32.311481 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m17:09:32.312107 [info ] [MainThread]:   impersonate_service_account: None
+[0m17:09:32.312627 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m17:09:32.313113 [info ] [MainThread]:   job_retries: 1
+[0m17:09:32.313582 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m17:09:32.314111 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m17:09:32.314612 [info ] [MainThread]:   keyfile: /home/avalon/Data-Fellowship-11/dbt_env/service-accounts/service-account-g4-dbt.json
+[0m17:09:32.315074 [info ] [MainThread]:   timeout_seconds: 300
+[0m17:09:32.315818 [info ] [MainThread]:   refresh_token: None
+[0m17:09:32.316703 [info ] [MainThread]:   client_id: None
+[0m17:09:32.317552 [info ] [MainThread]:   token_uri: None
+[0m17:09:32.318204 [info ] [MainThread]:   dataproc_region: None
+[0m17:09:32.318891 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m17:09:32.319566 [info ] [MainThread]:   gcs_bucket: None
+[0m17:09:32.320897 [info ] [MainThread]:   dataproc_batch: None
+[0m17:09:32.321846 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m17:09:32.323211 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m17:09:32.323870 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:09:32.326478 [debug] [MainThread]: On debug: select 1 as id
+[0m17:09:33.780470 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:34b826fd-093a-4d59-8384-066385872150&page=queryresults
+[0m17:09:34.669760 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:09:34.670341 [info ] [MainThread]: [32mAll checks passed![0m
+[0m17:09:34.671362 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.5700164, "process_user_time": 4.594485, "process_kernel_time": 0.7491, "process_mem_max_rss": "165596", "process_out_blocks": "24", "process_in_blocks": "0"}
+[0m17:09:34.672082 [debug] [MainThread]: Command `dbt debug` succeeded at 17:09:34.671898 after 3.57 seconds
+[0m17:09:34.672569 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:09:34.673037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faaeec57370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faad4822b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faad46bc3d0>]}
+[0m17:09:34.673585 [debug] [MainThread]: Flushing usage events
+[0m17:09:42.122475 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m17:59:02.885205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6fdffa1f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6fddc47730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6fddc45c60>]}
+
+
+============================== 17:59:02.892296 | e9b09674-ec64-4ba5-98db-6894ddccf962 ==============================
+[0m17:59:02.892296 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:59:02.893899 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:59:02.895291 [info ] [MainThread]: dbt version: 1.7.4
+[0m17:59:02.896070 [info ] [MainThread]: python version: 3.10.12
+[0m17:59:02.896844 [info ] [MainThread]: python path: /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/dbt-venv/bin/python3
+[0m17:59:02.897586 [info ] [MainThread]: os info: Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m17:59:03.494411 [info ] [MainThread]: Using profiles dir at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4
+[0m17:59:03.495136 [info ] [MainThread]: Using profiles.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/profiles.yml
+[0m17:59:03.495629 [info ] [MainThread]: Using dbt_project.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/dbt_project.yml
+[0m17:59:03.496462 [info ] [MainThread]: adapter type: bigquery
+[0m17:59:03.497171 [info ] [MainThread]: adapter version: 1.7.2
+[0m17:59:03.614092 [info ] [MainThread]: Configuration:
+[0m17:59:03.614756 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:59:03.615310 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m17:59:03.615865 [info ] [MainThread]: Required dependencies:
+[0m17:59:03.616421 [debug] [MainThread]: Executing "git --help"
+[0m17:59:03.619697 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:59:03.620346 [debug] [MainThread]: STDERR: "b''"
+[0m17:59:03.620786 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:59:03.621370 [info ] [MainThread]: Connection:
+[0m17:59:03.621952 [info ] [MainThread]:   method: service-account
+[0m17:59:03.622614 [info ] [MainThread]:   database: final-project-df11
+[0m17:59:03.623581 [info ] [MainThread]:   execution_project: final-project-df11
+[0m17:59:03.624520 [info ] [MainThread]:   schema: dbt_final_project_g4
+[0m17:59:03.627262 [info ] [MainThread]:   location: None
+[0m17:59:03.629274 [info ] [MainThread]:   priority: interactive
+[0m17:59:03.632143 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m17:59:03.633213 [info ] [MainThread]:   impersonate_service_account: None
+[0m17:59:03.633970 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m17:59:03.634659 [info ] [MainThread]:   job_retries: 1
+[0m17:59:03.635409 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m17:59:03.636139 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m17:59:03.637026 [info ] [MainThread]:   keyfile: /home/avalon/Data-Fellowship-11/dbt_env/service-accounts/service-account-g4-dbt.json
+[0m17:59:03.637816 [info ] [MainThread]:   timeout_seconds: 300
+[0m17:59:03.638794 [info ] [MainThread]:   refresh_token: None
+[0m17:59:03.640114 [info ] [MainThread]:   client_id: None
+[0m17:59:03.640937 [info ] [MainThread]:   token_uri: None
+[0m17:59:03.641608 [info ] [MainThread]:   dataproc_region: None
+[0m17:59:03.642251 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m17:59:03.643507 [info ] [MainThread]:   gcs_bucket: None
+[0m17:59:03.645166 [info ] [MainThread]:   dataproc_batch: None
+[0m17:59:03.648594 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m17:59:03.651601 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m17:59:03.654410 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:59:03.658896 [debug] [MainThread]: On debug: select 1 as id
+[0m17:59:05.285263 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:d9f9f5c3-70b3-4815-90c4-ef4bc87d8a30&page=queryresults
+[0m17:59:06.271648 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:59:06.272444 [info ] [MainThread]: [32mAll checks passed![0m
+[0m17:59:06.275889 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.4504619, "process_user_time": 3.944153, "process_kernel_time": 0.51923, "process_mem_max_rss": "122208", "process_out_blocks": "32", "process_in_blocks": "0"}
+[0m17:59:06.276869 [debug] [MainThread]: Command `dbt debug` succeeded at 17:59:06.276575 after 3.45 seconds
+[0m17:59:06.277813 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:59:06.278809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6fdffa1f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6fdc3f3ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6fdc3f2590>]}
+[0m17:59:06.280388 [debug] [MainThread]: Flushing usage events
+[0m18:00:17.460932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5f1cbd60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5ce99180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5ce98070>]}
+
+
+============================== 18:00:17.465806 | 0cde1231-f581-40d1-bfcd-38b3c7ff0ae2 ==============================
+[0m18:00:17.465806 [info ] [MainThread]: Running with dbt=1.7.4
+[0m18:00:17.467213 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt compile', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:00:18.164788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0cde1231-f581-40d1-bfcd-38b3c7ff0ae2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5ce637c0>]}
+[0m18:00:18.305268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0cde1231-f581-40d1-bfcd-38b3c7ff0ae2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5ba9a950>]}
+[0m18:00:18.306406 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m18:00:18.320034 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m18:00:18.375967 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:00:18.376974 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:00:18.379001 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.final_project_df11_fraud.03 - mart
+- models.final_project_df11_fraud.02 - intermediate
+- models.final_project_df11_fraud.01 - staging
+[0m18:00:18.403692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0cde1231-f581-40d1-bfcd-38b3c7ff0ae2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5b34bee0>]}
+[0m18:00:18.424172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0cde1231-f581-40d1-bfcd-38b3c7ff0ae2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5b30a4d0>]}
+[0m18:00:18.426123 [info ] [MainThread]: Found 1 model, 1 source, 0 exposures, 0 metrics, 447 macros, 0 groups, 0 semantic models
+[0m18:00:18.430039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0cde1231-f581-40d1-bfcd-38b3c7ff0ae2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5b30a3e0>]}
+[0m18:00:18.433993 [info ] [MainThread]: 
+[0m18:00:18.437231 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:00:18.440036 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_final-project-df11_dbt_final_project_g4'
+[0m18:00:18.441494 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:00:19.728982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0cde1231-f581-40d1-bfcd-38b3c7ff0ae2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5b30a110>]}
+[0m18:00:19.730528 [info ] [MainThread]: Concurrency: 3 threads (target='prod')
+[0m18:00:19.731562 [info ] [MainThread]: 
+[0m18:00:19.738918 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.stg_data
+[0m18:00:19.741517 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_final-project-df11_dbt_final_project_g4, now model.final_project_dbt_group4.stg_data)
+[0m18:00:19.742817 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.stg_data
+[0m18:00:19.763719 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (compile): 18:00:19.743389 => 18:00:19.761739
+[0m18:00:19.777810 [debug] [Thread-1 (]: Compilation Error in model stg_data (models/01 - staging/stg_data.sql)
+  'transaction_to_numb' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m18:00:19.780273 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.stg_data
+[0m18:00:19.784650 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:00:19.787887 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.stg_data' was properly closed.
+[0m18:00:19.791379 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Compilation Error in model stg_data (models/01 - staging/stg_data.sql)
+    'transaction_to_numb' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m18:00:19.794822 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_wall_clock_time": 2.43412, "process_user_time": 4.41881, "process_kernel_time": 0.229938, "process_mem_max_rss": "128652", "process_in_blocks": "56", "process_out_blocks": "896", "command_success": false}
+[0m18:00:19.796133 [debug] [MainThread]: Command `dbt compile` failed at 18:00:19.795847 after 2.44 seconds
+[0m18:00:19.797100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5f1cbd60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5b30a560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b5b2fb5e0>]}
+[0m18:00:19.798107 [debug] [MainThread]: Flushing usage events
+[0m18:12:26.714392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a7c69f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a5907970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a5906890>]}
+
+
+============================== 18:12:26.717577 | cf2c02aa-1241-4298-8429-babe65f60035 ==============================
+[0m18:12:26.717577 [info ] [MainThread]: Running with dbt=1.7.4
+[0m18:12:26.718252 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt compile', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:12:27.247175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cf2c02aa-1241-4298-8429-babe65f60035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a4137130>]}
+[0m18:12:27.355729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cf2c02aa-1241-4298-8429-babe65f60035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a594b250>]}
+[0m18:12:27.356713 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m18:12:27.366139 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m18:12:27.478348 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m18:12:27.479470 [debug] [MainThread]: Partial parsing: added file: final_project_dbt_group4://macros/transaction_to_numb.sql
+[0m18:12:27.492964 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.final_project_df11_fraud.02 - intermediate
+- models.final_project_df11_fraud.03 - mart
+- models.final_project_df11_fraud.01 - staging
+[0m18:12:27.500546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cf2c02aa-1241-4298-8429-babe65f60035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a3d88f70>]}
+[0m18:12:27.520530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cf2c02aa-1241-4298-8429-babe65f60035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a3d271f0>]}
+[0m18:12:27.521366 [info ] [MainThread]: Found 1 model, 1 source, 0 exposures, 0 metrics, 448 macros, 0 groups, 0 semantic models
+[0m18:12:27.522026 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cf2c02aa-1241-4298-8429-babe65f60035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a3d27130>]}
+[0m18:12:27.524124 [info ] [MainThread]: 
+[0m18:12:27.525776 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:12:27.529713 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_final-project-df11_dbt_final_project_g4'
+[0m18:12:27.531564 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:28.384221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cf2c02aa-1241-4298-8429-babe65f60035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a3d26e30>]}
+[0m18:12:28.385676 [info ] [MainThread]: Concurrency: 3 threads (target='prod')
+[0m18:12:28.386565 [info ] [MainThread]: 
+[0m18:12:28.391045 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.stg_data
+[0m18:12:28.392506 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_final-project-df11_dbt_final_project_g4, now model.final_project_dbt_group4.stg_data)
+[0m18:12:28.393348 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.stg_data
+[0m18:12:28.408607 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.stg_data"
+[0m18:12:28.413625 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (compile): 18:12:28.393908 => 18:12:28.412616
+[0m18:12:28.416282 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.stg_data
+[0m18:12:28.418317 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (execute): 18:12:28.417515 => 18:12:28.417554
+[0m18:12:28.421572 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.stg_data
+[0m18:12:28.425422 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:12:28.426173 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.stg_data' was properly closed.
+[0m18:12:28.427452 [debug] [MainThread]: Command end result
+[0m18:12:28.447236 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 1.7844043, "process_user_time": 3.589929, "process_kernel_time": 0.199996, "process_mem_max_rss": "129668", "process_out_blocks": "2688", "process_in_blocks": "0"}
+[0m18:12:28.449368 [debug] [MainThread]: Command `dbt compile` succeeded at 18:12:28.448749 after 1.79 seconds
+[0m18:12:28.450477 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a7c69f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a3bffaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a3d27760>]}
+[0m18:12:28.451714 [debug] [MainThread]: Flushing usage events
+[0m18:12:43.532760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f84b9f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f6194970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f6195270>]}
+
+
+============================== 18:12:43.535615 | 1f41029b-cd7b-4474-84eb-f10bedce6ab0 ==============================
+[0m18:12:43.535615 [info ] [MainThread]: Running with dbt=1.7.4
+[0m18:12:43.536275 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:12:44.056209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1f41029b-cd7b-4474-84eb-f10bedce6ab0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f615f3a0>]}
+[0m18:12:44.185647 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1f41029b-cd7b-4474-84eb-f10bedce6ab0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f4944670>]}
+[0m18:12:44.186950 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m18:12:44.201090 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m18:12:44.242543 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:12:44.243082 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:12:44.243748 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.final_project_df11_fraud.03 - mart
+- models.final_project_df11_fraud.01 - staging
+- models.final_project_df11_fraud.02 - intermediate
+[0m18:12:44.250267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1f41029b-cd7b-4474-84eb-f10bedce6ab0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f4643e50>]}
+[0m18:12:44.262117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1f41029b-cd7b-4474-84eb-f10bedce6ab0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f4606320>]}
+[0m18:12:44.263006 [info ] [MainThread]: Found 1 model, 1 source, 0 exposures, 0 metrics, 448 macros, 0 groups, 0 semantic models
+[0m18:12:44.264142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1f41029b-cd7b-4474-84eb-f10bedce6ab0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f46062f0>]}
+[0m18:12:44.267482 [info ] [MainThread]: 
+[0m18:12:44.269360 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:12:44.271820 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_final-project-df11'
+[0m18:12:44.274729 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:12:45.069936 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_final-project-df11, now list_final-project-df11_dbt_final_project_g4)
+[0m18:12:45.070676 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:12:45.820426 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1f41029b-cd7b-4474-84eb-f10bedce6ab0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f4605570>]}
+[0m18:12:45.821414 [info ] [MainThread]: Concurrency: 3 threads (target='prod')
+[0m18:12:45.821974 [info ] [MainThread]: 
+[0m18:12:45.825182 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.stg_data
+[0m18:12:45.825939 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_final_project_g4.stg_data ...................... [RUN]
+[0m18:12:45.826919 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_final-project-df11_dbt_final_project_g4, now model.final_project_dbt_group4.stg_data)
+[0m18:12:45.827500 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.stg_data
+[0m18:12:45.843599 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.stg_data"
+[0m18:12:45.845203 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (compile): 18:12:45.827823 => 18:12:45.844506
+[0m18:12:45.846096 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.stg_data
+[0m18:12:45.885017 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.stg_data"
+[0m18:12:45.888706 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:12:45.891605 [debug] [Thread-1 (]: On model.final_project_dbt_group4.stg_data: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.stg_data"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`stg_data`
+  OPTIONS()
+  as 
+
+select
+    md5( timestamp || nameOrig || nameDest || type || amount) as id_transaction,
+    md5( nameOrig || oldbalanceOrg || newbalanceOrig ) as id_orig,
+    md5( nameDest || oldbalanceDest || newbalanceDest ) as id_dest,
+
+    CAST(timestamp AS datetime) AS timestamp,
+    CAST(amount AS numeric) AS amount,
+
+    type AS transaction_type,
+
+    case type
+        when 'PAYMENT' then 1
+        when 'CASH_OUT' then 2
+        when 'CASH_IN' then 3
+        when 'TRANSFER' then 4
+        when 'DEBIT' then 5
+    end AS id_type,
+
+    nameOrig,
+
+    CAST(oldbalanceOrg AS numeric) AS oldbalanceOrg,
+    CAST(newbalanceOrig AS numeric) AS newbalanceOrig,
+
+    nameDest,
+    CAST(oldbalanceDest AS numeric) AS oldbalanceDest,
+    CAST(newbalanceDest AS numeric) AS newbalanceDest,
+    CAST(isFraud AS integer) AS isFraud,
+    CAST(isFlaggedFraud AS integer) AS isFlaggedFraud,
+
+from `final-project-df11`.`dbt_final_project_g4`.`raw_data_project`;
+
+
+[0m18:12:46.910237 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:3c2d9023-fe40-4ece-96e2-b1fabf5258da&page=queryresults
+[0m18:12:47.599402 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (execute): 18:12:45.846692 => 18:12:47.598915
+[0m18:12:47.601015 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1f41029b-cd7b-4474-84eb-f10bedce6ab0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f44d3f40>]}
+[0m18:12:47.602222 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbt_final_project_g4.stg_data ................. [[32mCREATE VIEW (0 processed)[0m in 1.77s]
+[0m18:12:47.603154 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.stg_data
+[0m18:12:47.605571 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:12:47.606041 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.stg_data' was properly closed.
+[0m18:12:47.606484 [info ] [MainThread]: 
+[0m18:12:47.606980 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.34 seconds (3.34s).
+[0m18:12:47.607815 [debug] [MainThread]: Command end result
+[0m18:12:47.636647 [info ] [MainThread]: 
+[0m18:12:47.637887 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:12:47.639216 [info ] [MainThread]: 
+[0m18:12:47.640566 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m18:12:47.642084 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.161292, "process_user_time": 4.094752, "process_kernel_time": 0.090104, "process_mem_max_rss": "133676", "process_out_blocks": "1784", "process_in_blocks": "0"}
+[0m18:12:47.643005 [debug] [MainThread]: Command `dbt run` succeeded at 18:12:47.642773 after 4.16 seconds
+[0m18:12:47.643656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f84b9f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f9b3c6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f68f47d33a0>]}
+[0m18:12:47.644264 [debug] [MainThread]: Flushing usage events
+[0m18:15:42.642385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f408ccef9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f408a9ba620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f408a9ba800>]}
+
+
+============================== 18:15:42.645152 | 6c2328b9-ddf6-49c8-bb21-7146329f37e7 ==============================
+[0m18:15:42.645152 [info ] [MainThread]: Running with dbt=1.7.4
+[0m18:15:42.645820 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt compile', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:15:43.155164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6c2328b9-ddf6-49c8-bb21-7146329f37e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4089207f10>]}
+[0m18:15:43.268942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6c2328b9-ddf6-49c8-bb21-7146329f37e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f408a9f6e30>]}
+[0m18:15:43.270048 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m18:15:43.286096 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m18:15:43.327564 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:15:43.328076 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:15:43.328938 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.final_project_df11_fraud.01 - staging
+- models.final_project_df11_fraud.02 - intermediate
+- models.final_project_df11_fraud.03 - mart
+[0m18:15:43.335259 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6c2328b9-ddf6-49c8-bb21-7146329f37e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4088e62290>]}
+[0m18:15:43.347344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6c2328b9-ddf6-49c8-bb21-7146329f37e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4088e20a30>]}
+[0m18:15:43.348047 [info ] [MainThread]: Found 5 models, 1 source, 0 exposures, 0 metrics, 448 macros, 0 groups, 0 semantic models
+[0m18:15:43.348625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6c2328b9-ddf6-49c8-bb21-7146329f37e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4088e20a60>]}
+[0m18:15:43.350350 [info ] [MainThread]: 
+[0m18:15:43.351481 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:15:43.353521 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_final-project-df11_dbt_final_project_g4'
+[0m18:15:43.354800 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:15:44.791464 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6c2328b9-ddf6-49c8-bb21-7146329f37e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4088e23c40>]}
+[0m18:15:44.792421 [info ] [MainThread]: Concurrency: 3 threads (target='prod')
+[0m18:15:44.792922 [info ] [MainThread]: 
+[0m18:15:44.797077 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.stg_data
+[0m18:15:44.798052 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_final-project-df11_dbt_final_project_g4, now model.final_project_dbt_group4.stg_data)
+[0m18:15:44.798570 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.stg_data
+[0m18:15:44.810335 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.stg_data"
+[0m18:15:44.811368 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (compile): 18:15:44.798917 => 18:15:44.811026
+[0m18:15:44.811904 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.stg_data
+[0m18:15:44.812554 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (execute): 18:15:44.812249 => 18:15:44.812276
+[0m18:15:44.813721 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.stg_data
+[0m18:15:44.815157 [debug] [Thread-3 (]: Began running node model.final_project_dbt_group4.dim_table_dest
+[0m18:15:44.815767 [debug] [Thread-2 (]: Began running node model.final_project_dbt_group4.dim_table_orig
+[0m18:15:44.816736 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.final_project_dbt_group4.dim_table_dest'
+[0m18:15:44.817347 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.dim_table_type
+[0m18:15:44.818719 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.final_project_dbt_group4.dim_table_orig'
+[0m18:15:44.820025 [debug] [Thread-3 (]: Began compiling node model.final_project_dbt_group4.dim_table_dest
+[0m18:15:44.821748 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.stg_data, now model.final_project_dbt_group4.dim_table_type)
+[0m18:15:44.822667 [debug] [Thread-2 (]: Began compiling node model.final_project_dbt_group4.dim_table_orig
+[0m18:15:44.830043 [debug] [Thread-3 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_dest"
+[0m18:15:44.831026 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.dim_table_type
+[0m18:15:44.838584 [debug] [Thread-2 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_orig"
+[0m18:15:44.843736 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_type"
+[0m18:15:44.845026 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.dim_table_dest (compile): 18:15:44.823268 => 18:15:44.844629
+[0m18:15:44.846210 [debug] [Thread-3 (]: Began executing node model.final_project_dbt_group4.dim_table_dest
+[0m18:15:44.847252 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.dim_table_dest (execute): 18:15:44.846857 => 18:15:44.846875
+[0m18:15:44.848401 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.dim_table_orig (compile): 18:15:44.831655 => 18:15:44.848036
+[0m18:15:44.849929 [debug] [Thread-3 (]: Finished running node model.final_project_dbt_group4.dim_table_dest
+[0m18:15:44.850780 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.dim_table_type (compile): 18:15:44.839640 => 18:15:44.850384
+[0m18:15:44.851707 [debug] [Thread-2 (]: Began executing node model.final_project_dbt_group4.dim_table_orig
+[0m18:15:44.853155 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.dim_table_type
+[0m18:15:44.854321 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.dim_table_orig (execute): 18:15:44.853871 => 18:15:44.853889
+[0m18:15:44.855247 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.dim_table_type (execute): 18:15:44.854858 => 18:15:44.854871
+[0m18:15:44.856919 [debug] [Thread-2 (]: Finished running node model.final_project_dbt_group4.dim_table_orig
+[0m18:15:44.858289 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.dim_table_type
+[0m18:15:44.860090 [debug] [Thread-3 (]: Began running node model.final_project_dbt_group4.fact_table
+[0m18:15:44.861166 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.dim_table_dest, now model.final_project_dbt_group4.fact_table)
+[0m18:15:44.861826 [debug] [Thread-3 (]: Began compiling node model.final_project_dbt_group4.fact_table
+[0m18:15:44.872082 [debug] [Thread-3 (]: Writing injected SQL for node "model.final_project_dbt_group4.fact_table"
+[0m18:15:44.873528 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.fact_table (compile): 18:15:44.862220 => 18:15:44.873051
+[0m18:15:44.874282 [debug] [Thread-3 (]: Began executing node model.final_project_dbt_group4.fact_table
+[0m18:15:44.875300 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.fact_table (execute): 18:15:44.874756 => 18:15:44.874776
+[0m18:15:44.876834 [debug] [Thread-3 (]: Finished running node model.final_project_dbt_group4.fact_table
+[0m18:15:44.878737 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:15:44.879255 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.dim_table_type' was properly closed.
+[0m18:15:44.879689 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.fact_table' was properly closed.
+[0m18:15:44.880119 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.dim_table_orig' was properly closed.
+[0m18:15:44.881506 [debug] [MainThread]: Command end result
+[0m18:15:44.892565 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 2.3020797, "process_user_time": 3.439318, "process_kernel_time": 0.14079, "process_mem_max_rss": "130860", "process_out_blocks": "1880", "process_in_blocks": "0"}
+[0m18:15:44.893489 [debug] [MainThread]: Command `dbt compile` succeeded at 18:15:44.893273 after 2.30 seconds
+[0m18:15:44.894025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f408ccef9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4088e300d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f408a9f6e30>]}
+[0m18:15:44.894586 [debug] [MainThread]: Flushing usage events
+[0m18:15:51.868703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe98b99f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe96868970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe96869270>]}
+
+
+============================== 18:15:51.872563 | 718cf1c8-656a-4def-a026-cdc06b93528f ==============================
+[0m18:15:51.872563 [info ] [MainThread]: Running with dbt=1.7.4
+[0m18:15:51.873528 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'debug': 'False', 'warn_error': 'None', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:15:52.417440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe9682f3a0>]}
+[0m18:15:52.532865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe950171f0>]}
+[0m18:15:52.534288 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m18:15:52.560711 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m18:15:52.645438 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:15:52.646105 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:15:52.647273 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.final_project_df11_fraud.01 - staging
+- models.final_project_df11_fraud.02 - intermediate
+- models.final_project_df11_fraud.03 - mart
+[0m18:15:52.660423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94d1dc90>]}
+[0m18:15:52.686449 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94cdfac0>]}
+[0m18:15:52.688819 [info ] [MainThread]: Found 5 models, 1 source, 0 exposures, 0 metrics, 448 macros, 0 groups, 0 semantic models
+[0m18:15:52.690126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94cdc460>]}
+[0m18:15:52.693792 [info ] [MainThread]: 
+[0m18:15:52.695154 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:15:52.697229 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_final-project-df11'
+[0m18:15:52.698376 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:15:53.445077 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_final-project-df11, now list_final-project-df11_dbt_final_project_g4)
+[0m18:15:53.445764 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:15:54.197563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94cdeda0>]}
+[0m18:15:54.198826 [info ] [MainThread]: Concurrency: 3 threads (target='prod')
+[0m18:15:54.199773 [info ] [MainThread]: 
+[0m18:15:54.204483 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.stg_data
+[0m18:15:54.205376 [info ] [Thread-1 (]: 1 of 5 START sql view model dbt_final_project_g4.stg_data ...................... [RUN]
+[0m18:15:54.206683 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_final-project-df11_dbt_final_project_g4, now model.final_project_dbt_group4.stg_data)
+[0m18:15:54.207553 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.stg_data
+[0m18:15:54.223571 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.stg_data"
+[0m18:15:54.224825 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (compile): 18:15:54.208362 => 18:15:54.224410
+[0m18:15:54.225632 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.stg_data
+[0m18:15:54.283447 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.stg_data"
+[0m18:15:54.284579 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:15:54.287266 [debug] [Thread-1 (]: On model.final_project_dbt_group4.stg_data: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.stg_data"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`stg_data`
+  OPTIONS()
+  as 
+
+select
+    md5( timestamp || nameOrig || nameDest || type || amount) as id_transaction,
+    md5( nameOrig || oldbalanceOrg || newbalanceOrig ) as id_orig,
+    md5( nameDest || oldbalanceDest || newbalanceDest ) as id_dest,
+
+    CAST(timestamp AS datetime) AS timestamp,
+    CAST(amount AS numeric) AS amount,
+
+    type AS transaction_type,
+
+    case type
+        when 'PAYMENT' then 1
+        when 'CASH_OUT' then 2
+        when 'CASH_IN' then 3
+        when 'TRANSFER' then 4
+        when 'DEBIT' then 5
+    end AS id_type,
+
+    nameOrig,
+
+    CAST(oldbalanceOrg AS numeric) AS oldbalanceOrg,
+    CAST(newbalanceOrig AS numeric) AS newbalanceOrig,
+
+    nameDest,
+    CAST(oldbalanceDest AS numeric) AS oldbalanceDest,
+    CAST(newbalanceDest AS numeric) AS newbalanceDest,
+    CAST(isFraud AS integer) AS isFraud,
+    CAST(isFlaggedFraud AS integer) AS isFlaggedFraud,
+
+from `final-project-df11`.`dbt_final_project_g4`.`raw_data_project`;
+
+
+[0m18:15:55.299893 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:e7e3df85-ef47-4060-9e5d-18be0c205900&page=queryresults
+[0m18:15:56.020575 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (execute): 18:15:54.226163 => 18:15:56.020281
+[0m18:15:56.021561 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94d1e170>]}
+[0m18:15:56.022337 [info ] [Thread-1 (]: 1 of 5 OK created sql view model dbt_final_project_g4.stg_data ................. [[32mCREATE VIEW (0 processed)[0m in 1.82s]
+[0m18:15:56.023192 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.stg_data
+[0m18:15:56.024719 [debug] [Thread-3 (]: Began running node model.final_project_dbt_group4.dim_table_dest
+[0m18:15:56.025344 [debug] [Thread-2 (]: Began running node model.final_project_dbt_group4.dim_table_orig
+[0m18:15:56.026022 [info ] [Thread-3 (]: 2 of 5 START sql view model dbt_final_project_g4.dim_table_dest ................ [RUN]
+[0m18:15:56.026791 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.dim_table_type
+[0m18:15:56.027438 [info ] [Thread-2 (]: 3 of 5 START sql table model dbt_final_project_g4.dim_table_orig ............... [RUN]
+[0m18:15:56.028668 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.final_project_dbt_group4.dim_table_dest'
+[0m18:15:56.029524 [info ] [Thread-1 (]: 4 of 5 START sql view model dbt_final_project_g4.dim_table_type ................ [RUN]
+[0m18:15:56.031330 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.final_project_dbt_group4.dim_table_orig'
+[0m18:15:56.032656 [debug] [Thread-3 (]: Began compiling node model.final_project_dbt_group4.dim_table_dest
+[0m18:15:56.033943 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.stg_data, now model.final_project_dbt_group4.dim_table_type)
+[0m18:15:56.034918 [debug] [Thread-2 (]: Began compiling node model.final_project_dbt_group4.dim_table_orig
+[0m18:15:56.050283 [debug] [Thread-3 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_dest"
+[0m18:15:56.051496 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.dim_table_type
+[0m18:15:56.057279 [debug] [Thread-2 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_orig"
+[0m18:15:56.062442 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_type"
+[0m18:15:56.064863 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.dim_table_dest (compile): 18:15:56.035566 => 18:15:56.064221
+[0m18:15:56.067345 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.dim_table_orig (compile): 18:15:56.052492 => 18:15:56.066270
+[0m18:15:56.068984 [debug] [Thread-3 (]: Began executing node model.final_project_dbt_group4.dim_table_dest
+[0m18:15:56.070940 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.dim_table_type (compile): 18:15:56.058163 => 18:15:56.070108
+[0m18:15:56.072010 [debug] [Thread-2 (]: Began executing node model.final_project_dbt_group4.dim_table_orig
+[0m18:15:56.078718 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.dim_table_type
+[0m18:15:56.080088 [debug] [Thread-3 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_dest"
+[0m18:15:56.095809 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_type"
+[0m18:15:56.126566 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:15:56.131290 [debug] [Thread-2 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_orig"
+[0m18:15:56.136060 [debug] [Thread-3 (]: On model.final_project_dbt_group4.dim_table_dest: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_dest"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`dim_table_dest`
+  OPTIONS()
+  as 
+
+SELECT
+    DISTINCT(id_dest),
+    nameDest,
+    oldbalanceDest,
+    newbalanceDest
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`;
+
+
+[0m18:15:56.138003 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:15:56.177935 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:15:56.182470 [debug] [Thread-2 (]: On model.final_project_dbt_group4.dim_table_orig: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_orig"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`dim_table_orig`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    DISTINCT(id_orig),
+    nameOrig,
+    oldbalanceOrg,
+    newbalanceOrig
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`
+    );
+  
+[0m18:15:56.184885 [debug] [Thread-1 (]: On model.final_project_dbt_group4.dim_table_type: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_type"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`dim_table_type`
+  OPTIONS()
+  as 
+
+SELECT
+    DISTINCT(id_type),
+    transaction_type
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`;
+
+
+[0m18:15:57.480094 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:adb725b5-2a3c-4a94-aeaa-f7e2135a58c1&page=queryresults
+[0m18:15:57.579237 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:0a9d25fc-a081-4659-a919-0647d1a61e6b&page=queryresults
+[0m18:15:57.657096 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:76f98d2d-c2b6-46ab-82ff-1cbdb4145b73&page=queryresults
+[0m18:15:58.152358 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.dim_table_type (execute): 18:15:56.091532 => 18:15:58.152030
+[0m18:15:58.153632 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94c23ee0>]}
+[0m18:15:58.154529 [info ] [Thread-1 (]: 4 of 5 OK created sql view model dbt_final_project_g4.dim_table_type ........... [[32mCREATE VIEW (0 processed)[0m in 2.12s]
+[0m18:15:58.155427 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.dim_table_type
+[0m18:15:58.233174 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.dim_table_dest (execute): 18:15:56.072934 => 18:15:58.232850
+[0m18:15:58.234533 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94bb7970>]}
+[0m18:15:58.235408 [info ] [Thread-3 (]: 2 of 5 OK created sql view model dbt_final_project_g4.dim_table_dest ........... [[32mCREATE VIEW (0 processed)[0m in 2.21s]
+[0m18:15:58.236276 [debug] [Thread-3 (]: Finished running node model.final_project_dbt_group4.dim_table_dest
+[0m18:16:09.554581 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.dim_table_orig (execute): 18:15:56.080780 => 18:16:09.554292
+[0m18:16:09.555569 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe9423ef20>]}
+[0m18:16:09.556323 [info ] [Thread-2 (]: 3 of 5 OK created sql table model dbt_final_project_g4.dim_table_orig .......... [[32mCREATE TABLE (6.4m rows, 172.8 MiB processed)[0m in 13.53s]
+[0m18:16:09.557133 [debug] [Thread-2 (]: Finished running node model.final_project_dbt_group4.dim_table_orig
+[0m18:16:09.558292 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.fact_table
+[0m18:16:09.559147 [info ] [Thread-1 (]: 5 of 5 START sql table model dbt_final_project_g4.fact_table ................... [RUN]
+[0m18:16:09.560628 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.dim_table_type, now model.final_project_dbt_group4.fact_table)
+[0m18:16:09.561322 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.fact_table
+[0m18:16:09.568095 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.fact_table"
+[0m18:16:09.569633 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.fact_table (compile): 18:16:09.561664 => 18:16:09.568751
+[0m18:16:09.570242 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.fact_table
+[0m18:16:09.574159 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.fact_table"
+[0m18:16:09.575090 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:16:09.576831 [debug] [Thread-1 (]: On model.final_project_dbt_group4.fact_table: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.fact_table"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT DISTINCT
+    stg.id_transaction AS id_transaction,
+    stg.timestamp AS date,
+    transaction_type.id_type AS id_type,
+    stg.amount AS amount,
+    orig.id_orig AS id_orig,
+    dest.id_dest AS id_dest,
+    stg.isFraud AS isFraud,
+    stg.isFlaggedFraud AS isFlaggedFraud,
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data` AS stg
+
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_dest` AS dest
+    ON stg.id_dest = dest.id_dest
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_type` AS transaction_type
+    ON stg.id_type = transaction_type.id_type
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_orig` AS orig
+    ON stg.id_orig = orig.id_orig
+    );
+  
+[0m18:16:10.754539 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:8dfb283a-73dc-476e-bb04-13ef341101cf&page=queryresults
+[0m18:16:30.546793 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.fact_table (execute): 18:16:09.570587 => 18:16:30.546471
+[0m18:16:30.547764 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '718cf1c8-656a-4def-a026-cdc06b93528f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94bb7190>]}
+[0m18:16:30.548612 [info ] [Thread-1 (]: 5 of 5 OK created sql table model dbt_final_project_g4.fact_table .............. [[32mCREATE TABLE (6.4m rows, 706.2 MiB processed)[0m in 20.99s]
+[0m18:16:30.549621 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.fact_table
+[0m18:16:30.552788 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:16:30.553360 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.fact_table' was properly closed.
+[0m18:16:30.553793 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.dim_table_dest' was properly closed.
+[0m18:16:30.554189 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.dim_table_orig' was properly closed.
+[0m18:16:30.554773 [info ] [MainThread]: 
+[0m18:16:30.555306 [info ] [MainThread]: Finished running 3 view models, 2 table models in 0 hours 0 minutes and 37.86 seconds (37.86s).
+[0m18:16:30.557241 [debug] [MainThread]: Command end result
+[0m18:16:30.572438 [info ] [MainThread]: 
+[0m18:16:30.573322 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:16:30.574164 [info ] [MainThread]: 
+[0m18:16:30.574943 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[0m18:16:30.576226 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 38.763905, "process_user_time": 5.249115, "process_kernel_time": 0.40719, "process_mem_max_rss": "141476", "process_out_blocks": "1936", "process_in_blocks": "0"}
+[0m18:16:30.577655 [debug] [MainThread]: Command `dbt run` succeeded at 18:16:30.577187 after 38.77 seconds
+[0m18:16:30.579288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe98b99f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe94ecdfc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbe950171f0>]}
+[0m18:16:30.581057 [debug] [MainThread]: Flushing usage events
+[0m18:18:36.369746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe80b533d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe809211180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8092101f0>]}
+
+
+============================== 18:18:36.372487 | 87c62422-b887-46cb-8a08-b6aa72fe951d ==============================
+[0m18:18:36.372487 [info ] [MainThread]: Running with dbt=1.7.4
+[0m18:18:36.373230 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run --full-refresh', 'send_anonymous_usage_stats': 'True'}
+[0m18:18:36.886617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8091db3d0>]}
+[0m18:18:37.008711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe807e10b80>]}
+[0m18:18:37.010142 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m18:18:37.028159 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m18:18:37.068901 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:18:37.069449 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:18:37.070369 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.final_project_df11_fraud.01 - staging
+- models.final_project_df11_fraud.03 - mart
+- models.final_project_df11_fraud.02 - intermediate
+[0m18:18:37.078369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8074d3f10>]}
+[0m18:18:37.089922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8076986a0>]}
+[0m18:18:37.090992 [info ] [MainThread]: Found 8 models, 1 source, 0 exposures, 0 metrics, 448 macros, 0 groups, 0 semantic models
+[0m18:18:37.092006 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe807698550>]}
+[0m18:18:37.094703 [info ] [MainThread]: 
+[0m18:18:37.096078 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:18:37.099510 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_final-project-df11'
+[0m18:18:37.101698 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:18:39.510164 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_final-project-df11, now list_final-project-df11_dbt_final_project_g4)
+[0m18:18:39.511122 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:18:40.288209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8079813c0>]}
+[0m18:18:40.291095 [info ] [MainThread]: Concurrency: 3 threads (target='prod')
+[0m18:18:40.292665 [info ] [MainThread]: 
+[0m18:18:40.307987 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.stg_data
+[0m18:18:40.310167 [info ] [Thread-1 (]: 1 of 8 START sql view model dbt_final_project_g4.stg_data ...................... [RUN]
+[0m18:18:40.313494 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_final-project-df11_dbt_final_project_g4, now model.final_project_dbt_group4.stg_data)
+[0m18:18:40.316576 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.stg_data
+[0m18:18:40.354438 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.stg_data"
+[0m18:18:40.361557 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (compile): 18:18:40.317676 => 18:18:40.356069
+[0m18:18:40.365002 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.stg_data
+[0m18:18:40.432789 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.stg_data"
+[0m18:18:40.434154 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:18:40.437578 [debug] [Thread-1 (]: On model.final_project_dbt_group4.stg_data: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.stg_data"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`stg_data`
+  OPTIONS()
+  as 
+
+select
+    md5( timestamp || nameOrig || nameDest || type || amount) as id_transaction,
+    md5( nameOrig || oldbalanceOrg || newbalanceOrig ) as id_orig,
+    md5( nameDest || oldbalanceDest || newbalanceDest ) as id_dest,
+
+    CAST(timestamp AS datetime) AS timestamp,
+    CAST(amount AS numeric) AS amount,
+
+    type AS transaction_type,
+
+    case type
+        when 'PAYMENT' then 1
+        when 'CASH_OUT' then 2
+        when 'CASH_IN' then 3
+        when 'TRANSFER' then 4
+        when 'DEBIT' then 5
+    end AS id_type,
+
+    nameOrig,
+
+    CAST(oldbalanceOrg AS numeric) AS oldbalanceOrg,
+    CAST(newbalanceOrig AS numeric) AS newbalanceOrig,
+
+    nameDest,
+    CAST(oldbalanceDest AS numeric) AS oldbalanceDest,
+    CAST(newbalanceDest AS numeric) AS newbalanceDest,
+    CAST(isFraud AS integer) AS isFraud,
+    CAST(isFlaggedFraud AS integer) AS isFlaggedFraud,
+
+from `final-project-df11`.`dbt_final_project_g4`.`raw_data_project`;
+
+
+[0m18:18:41.524240 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:57a17664-8bc9-4637-af63-6699203940de&page=queryresults
+[0m18:18:42.239156 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (execute): 18:18:40.366176 => 18:18:42.238674
+[0m18:18:42.240759 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe80767fe20>]}
+[0m18:18:42.241800 [info ] [Thread-1 (]: 1 of 8 OK created sql view model dbt_final_project_g4.stg_data ................. [[32mCREATE VIEW (0 processed)[0m in 1.93s]
+[0m18:18:42.242686 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.stg_data
+[0m18:18:42.244184 [debug] [Thread-3 (]: Began running node model.final_project_dbt_group4.dim_table_dest
+[0m18:18:42.244831 [debug] [Thread-2 (]: Began running node model.final_project_dbt_group4.dim_table_orig
+[0m18:18:42.245508 [info ] [Thread-3 (]: 2 of 8 START sql view model dbt_final_project_g4.dim_table_dest ................ [RUN]
+[0m18:18:42.246299 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.dim_table_type
+[0m18:18:42.247028 [info ] [Thread-2 (]: 3 of 8 START sql table model dbt_final_project_g4.dim_table_orig ............... [RUN]
+[0m18:18:42.248509 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.final_project_dbt_group4.dim_table_dest'
+[0m18:18:42.250120 [info ] [Thread-1 (]: 4 of 8 START sql view model dbt_final_project_g4.dim_table_type ................ [RUN]
+[0m18:18:42.252168 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.final_project_dbt_group4.dim_table_orig'
+[0m18:18:42.253131 [debug] [Thread-3 (]: Began compiling node model.final_project_dbt_group4.dim_table_dest
+[0m18:18:42.254352 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.stg_data, now model.final_project_dbt_group4.dim_table_type)
+[0m18:18:42.255280 [debug] [Thread-2 (]: Began compiling node model.final_project_dbt_group4.dim_table_orig
+[0m18:18:42.261704 [debug] [Thread-3 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_dest"
+[0m18:18:42.263181 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.dim_table_type
+[0m18:18:42.269281 [debug] [Thread-2 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_orig"
+[0m18:18:42.274627 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_type"
+[0m18:18:42.276471 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.dim_table_dest (compile): 18:18:42.256044 => 18:18:42.275981
+[0m18:18:42.277846 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.dim_table_orig (compile): 18:18:42.264395 => 18:18:42.277309
+[0m18:18:42.279188 [debug] [Thread-3 (]: Began executing node model.final_project_dbt_group4.dim_table_dest
+[0m18:18:42.280494 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.dim_table_type (compile): 18:18:42.270279 => 18:18:42.279962
+[0m18:18:42.281647 [debug] [Thread-2 (]: Began executing node model.final_project_dbt_group4.dim_table_orig
+[0m18:18:42.287584 [debug] [Thread-3 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_dest"
+[0m18:18:42.288486 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.dim_table_type
+[0m18:18:42.303718 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:18:42.310373 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_type"
+[0m18:18:42.311236 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:18:42.351156 [debug] [Thread-3 (]: On model.final_project_dbt_group4.dim_table_dest: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_dest"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`dim_table_dest`
+  OPTIONS()
+  as 
+
+SELECT
+    DISTINCT(id_dest),
+    nameDest,
+    oldbalanceDest,
+    newbalanceDest
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`;
+
+
+[0m18:18:42.387335 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:18:42.391871 [debug] [Thread-1 (]: On model.final_project_dbt_group4.dim_table_type: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_type"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`dim_table_type`
+  OPTIONS()
+  as 
+
+SELECT
+    DISTINCT(id_type),
+    transaction_type
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`;
+
+
+[0m18:18:44.298323 [debug] [Thread-2 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_orig"
+[0m18:18:44.300229 [debug] [Thread-2 (]: On model.final_project_dbt_group4.dim_table_orig: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_orig"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`dim_table_orig`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    DISTINCT(id_orig),
+    nameOrig,
+    oldbalanceOrg,
+    newbalanceOrig
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`
+    );
+  
+[0m18:18:44.558833 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:5e199f87-9489-49a7-887a-5dac9dff80ea&page=queryresults
+[0m18:18:44.577606 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:5c1270ea-e515-4484-89ba-51545df01768&page=queryresults
+[0m18:18:45.017518 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:5051d082-375e-47f1-8f36-8c61953bd75d&page=queryresults
+[0m18:18:45.233495 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.dim_table_dest (execute): 18:18:42.283219 => 18:18:45.233204
+[0m18:18:45.234567 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8043e86a0>]}
+[0m18:18:45.235325 [info ] [Thread-3 (]: 2 of 8 OK created sql view model dbt_final_project_g4.dim_table_dest ........... [[32mCREATE VIEW (0 processed)[0m in 2.99s]
+[0m18:18:45.236135 [debug] [Thread-3 (]: Finished running node model.final_project_dbt_group4.dim_table_dest
+[0m18:18:45.243757 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.dim_table_type (execute): 18:18:42.304204 => 18:18:45.243318
+[0m18:18:45.245525 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe804405180>]}
+[0m18:18:45.246401 [info ] [Thread-1 (]: 4 of 8 OK created sql view model dbt_final_project_g4.dim_table_type ........... [[32mCREATE VIEW (0 processed)[0m in 2.99s]
+[0m18:18:45.247225 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.dim_table_type
+[0m18:18:55.914145 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.dim_table_orig (execute): 18:18:42.289308 => 18:18:55.913868
+[0m18:18:55.915069 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8043fff70>]}
+[0m18:18:55.915828 [info ] [Thread-2 (]: 3 of 8 OK created sql table model dbt_final_project_g4.dim_table_orig .......... [[32mCREATE TABLE (6.4m rows, 172.8 MiB processed)[0m in 13.66s]
+[0m18:18:55.916687 [debug] [Thread-2 (]: Finished running node model.final_project_dbt_group4.dim_table_orig
+[0m18:18:55.918017 [debug] [Thread-3 (]: Began running node model.final_project_dbt_group4.fact_table
+[0m18:18:55.918761 [info ] [Thread-3 (]: 5 of 8 START sql table model dbt_final_project_g4.fact_table ................... [RUN]
+[0m18:18:55.919825 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.dim_table_dest, now model.final_project_dbt_group4.fact_table)
+[0m18:18:55.920536 [debug] [Thread-3 (]: Began compiling node model.final_project_dbt_group4.fact_table
+[0m18:18:55.926797 [debug] [Thread-3 (]: Writing injected SQL for node "model.final_project_dbt_group4.fact_table"
+[0m18:18:55.927868 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.fact_table (compile): 18:18:55.920958 => 18:18:55.927498
+[0m18:18:55.928501 [debug] [Thread-3 (]: Began executing node model.final_project_dbt_group4.fact_table
+[0m18:18:55.932218 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:18:56.728490 [debug] [Thread-3 (]: Writing runtime sql for node "model.final_project_dbt_group4.fact_table"
+[0m18:18:56.729401 [debug] [Thread-3 (]: On model.final_project_dbt_group4.fact_table: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.fact_table"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT DISTINCT
+    stg.id_transaction AS id_transaction,
+    stg.timestamp AS date,
+    transaction_type.id_type AS id_type,
+    stg.amount AS amount,
+    orig.id_orig AS id_orig,
+    dest.id_dest AS id_dest,
+    stg.isFraud AS isFraud,
+    stg.isFlaggedFraud AS isFlaggedFraud,
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data` AS stg
+
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_dest` AS dest
+    ON stg.id_dest = dest.id_dest
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_type` AS transaction_type
+    ON stg.id_type = transaction_type.id_type
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_orig` AS orig
+    ON stg.id_orig = orig.id_orig
+    );
+  
+[0m18:18:57.422900 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:f77f34f1-da6d-4906-acb9-2e24d02a990a&page=queryresults
+[0m18:19:14.827127 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.fact_table (execute): 18:18:55.928900 => 18:19:14.826841
+[0m18:19:14.828127 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe80756d090>]}
+[0m18:19:14.828879 [info ] [Thread-3 (]: 5 of 8 OK created sql table model dbt_final_project_g4.fact_table .............. [[32mCREATE TABLE (6.4m rows, 706.2 MiB processed)[0m in 18.91s]
+[0m18:19:14.829815 [debug] [Thread-3 (]: Finished running node model.final_project_dbt_group4.fact_table
+[0m18:19:14.831355 [debug] [Thread-2 (]: Began running node model.final_project_dbt_group4.cluster_by_fraud
+[0m18:19:14.831953 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.cluster_by_payment
+[0m18:19:14.832625 [info ] [Thread-2 (]: 6 of 8 START sql table model dbt_final_project_g4.cluster_by_fraud ............. [RUN]
+[0m18:19:14.833704 [debug] [Thread-3 (]: Began running node model.final_project_dbt_group4.partition_date
+[0m18:19:14.834796 [info ] [Thread-1 (]: 7 of 8 START sql table model dbt_final_project_g4.cluster_by_payment ........... [RUN]
+[0m18:19:14.836806 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.dim_table_orig, now model.final_project_dbt_group4.cluster_by_fraud)
+[0m18:19:14.838009 [info ] [Thread-3 (]: 8 of 8 START sql table model dbt_final_project_g4.partition_date ............... [RUN]
+[0m18:19:14.840421 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.dim_table_type, now model.final_project_dbt_group4.cluster_by_payment)
+[0m18:19:14.841388 [debug] [Thread-2 (]: Began compiling node model.final_project_dbt_group4.cluster_by_fraud
+[0m18:19:14.842482 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.fact_table, now model.final_project_dbt_group4.partition_date)
+[0m18:19:14.843148 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.cluster_by_payment
+[0m18:19:14.847436 [debug] [Thread-2 (]: Writing injected SQL for node "model.final_project_dbt_group4.cluster_by_fraud"
+[0m18:19:14.848453 [debug] [Thread-3 (]: Began compiling node model.final_project_dbt_group4.partition_date
+[0m18:19:14.854631 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.cluster_by_payment"
+[0m18:19:14.862534 [debug] [Thread-3 (]: Writing injected SQL for node "model.final_project_dbt_group4.partition_date"
+[0m18:19:14.864657 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.cluster_by_fraud (compile): 18:19:14.843590 => 18:19:14.863842
+[0m18:19:14.866553 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.cluster_by_payment (compile): 18:19:14.849018 => 18:19:14.866034
+[0m18:19:14.867402 [debug] [Thread-2 (]: Began executing node model.final_project_dbt_group4.cluster_by_fraud
+[0m18:19:14.868523 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.partition_date (compile): 18:19:14.855729 => 18:19:14.868083
+[0m18:19:14.869622 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.cluster_by_payment
+[0m18:19:14.880572 [debug] [Thread-2 (]: Writing runtime sql for node "model.final_project_dbt_group4.cluster_by_fraud"
+[0m18:19:14.881270 [debug] [Thread-3 (]: Began executing node model.final_project_dbt_group4.partition_date
+[0m18:19:14.885288 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.cluster_by_payment"
+[0m18:19:14.898893 [debug] [Thread-3 (]: Writing runtime sql for node "model.final_project_dbt_group4.partition_date"
+[0m18:19:14.900404 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:19:14.901158 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:19:14.902152 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:19:14.904905 [debug] [Thread-1 (]: On model.final_project_dbt_group4.cluster_by_payment: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.cluster_by_payment"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`cluster_by_payment`
+      
+    
+    cluster by id_type
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    *
+FROM 
+    `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+    );
+  
+[0m18:19:14.907616 [debug] [Thread-2 (]: On model.final_project_dbt_group4.cluster_by_fraud: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.cluster_by_fraud"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`cluster_by_fraud`
+      
+    
+    cluster by isFraud
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    *
+FROM
+    `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+    );
+  
+[0m18:19:14.911259 [debug] [Thread-3 (]: On model.final_project_dbt_group4.partition_date: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.partition_date"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`partition_date`
+      
+    partition by timestamp_trunc(date, day)
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    *
+FROM
+    `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+    );
+  
+[0m18:19:16.894226 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:fc7c55b2-b63a-4963-bdce-dab24d0e6831&page=queryresults
+[0m18:19:16.977198 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:9e9e9f5b-15b2-40c5-b90d-581405f21995&page=queryresults
+[0m18:19:16.978124 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:8c70b26b-789a-46d0-bd54-5fada9f460a7&page=queryresults
+[0m18:19:22.763999 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.cluster_by_payment (execute): 18:19:14.881722 => 18:19:22.763716
+[0m18:19:22.764969 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8043d4370>]}
+[0m18:19:22.765772 [info ] [Thread-1 (]: 7 of 8 OK created sql table model dbt_final_project_g4.cluster_by_payment ...... [[32mCREATE TABLE (6.4m rows, 618.9 MiB processed)[0m in 7.93s]
+[0m18:19:22.766604 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.cluster_by_payment
+[0m18:19:22.778633 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.cluster_by_fraud (execute): 18:19:14.870510 => 18:19:22.778286
+[0m18:19:22.779802 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8043d5000>]}
+[0m18:19:22.780792 [info ] [Thread-2 (]: 6 of 8 OK created sql table model dbt_final_project_g4.cluster_by_fraud ........ [[32mCREATE TABLE (6.4m rows, 618.9 MiB processed)[0m in 7.94s]
+[0m18:19:22.781656 [debug] [Thread-2 (]: Finished running node model.final_project_dbt_group4.cluster_by_fraud
+[0m18:19:23.327042 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.partition_date (execute): 18:19:14.886175 => 18:19:23.326756
+[0m18:19:23.328006 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87c62422-b887-46cb-8a08-b6aa72fe951d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8076bdf30>]}
+[0m18:19:23.328781 [info ] [Thread-3 (]: 8 of 8 OK created sql table model dbt_final_project_g4.partition_date .......... [[32mCREATE TABLE (6.4m rows, 618.9 MiB processed)[0m in 8.49s]
+[0m18:19:23.329653 [debug] [Thread-3 (]: Finished running node model.final_project_dbt_group4.partition_date
+[0m18:19:23.332136 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:19:23.332640 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.cluster_by_payment' was properly closed.
+[0m18:19:23.333094 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.partition_date' was properly closed.
+[0m18:19:23.333500 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.cluster_by_fraud' was properly closed.
+[0m18:19:23.333988 [info ] [MainThread]: 
+[0m18:19:23.334503 [info ] [MainThread]: Finished running 3 view models, 5 table models in 0 hours 0 minutes and 46.24 seconds (46.24s).
+[0m18:19:23.336880 [debug] [MainThread]: Command end result
+[0m18:19:23.349421 [info ] [MainThread]: 
+[0m18:19:23.350483 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:19:23.351749 [info ] [MainThread]: 
+[0m18:19:23.352950 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=0 SKIP=0 TOTAL=8
+[0m18:19:23.354611 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 47.038475, "process_user_time": 8.864574, "process_kernel_time": 1.931127, "process_mem_max_rss": "143444", "process_out_blocks": "2048", "process_in_blocks": "0"}
+[0m18:19:23.355616 [debug] [MainThread]: Command `dbt run` succeeded at 18:19:23.355372 after 47.04 seconds
+[0m18:19:23.356224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe80b533d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe804432530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe807e10b80>]}
+[0m18:19:23.357095 [debug] [MainThread]: Flushing usage events
+[0m18:23:04.300584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cc05efa00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbe28b970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbe28a890>]}
+
+
+============================== 18:23:04.303324 | 6aa1d263-aa17-4fc7-a2c0-423f8468950a ==============================
+[0m18:23:04.303324 [info ] [MainThread]: Running with dbt=1.7.4
+[0m18:23:04.303982 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --full-refresh', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:23:04.793296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbe253970>]}
+[0m18:23:04.907232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbd06e980>]}
+[0m18:23:04.908305 [info ] [MainThread]: Registered adapter: bigquery=1.7.2
+[0m18:23:04.918291 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m18:23:04.965069 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:23:04.965657 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:23:04.966628 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.final_project_df11_fraud.02 - intermediate
+- models.final_project_df11_fraud.03 - mart
+- models.final_project_df11_fraud.01 - staging
+[0m18:23:04.974193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc70c0d0>]}
+[0m18:23:04.992953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc6d9060>]}
+[0m18:23:04.994818 [info ] [MainThread]: Found 8 models, 1 source, 0 exposures, 0 metrics, 450 macros, 0 groups, 0 semantic models
+[0m18:23:04.995642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc6d9030>]}
+[0m18:23:04.998735 [info ] [MainThread]: 
+[0m18:23:05.000490 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:23:05.003063 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_final-project-df11'
+[0m18:23:05.004658 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:23:05.820312 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_final-project-df11, now list_final-project-df11_dbt_final_project_g4)
+[0m18:23:05.820999 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:23:06.620315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc9c85b0>]}
+[0m18:23:06.628973 [info ] [MainThread]: Concurrency: 3 threads (target='prod')
+[0m18:23:06.631216 [info ] [MainThread]: 
+[0m18:23:06.657835 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.stg_data
+[0m18:23:06.661257 [info ] [Thread-1 (]: 1 of 8 START sql view model dbt_final_project_g4.stg_data ...................... [RUN]
+[0m18:23:06.665458 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_final-project-df11_dbt_final_project_g4, now model.final_project_dbt_group4.stg_data)
+[0m18:23:06.679197 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.stg_data
+[0m18:23:06.797100 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.stg_data"
+[0m18:23:06.802042 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (compile): 18:23:06.680723 => 18:23:06.800070
+[0m18:23:06.813269 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.stg_data
+[0m18:23:07.350532 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.stg_data"
+[0m18:23:07.438173 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:23:07.443802 [debug] [Thread-1 (]: On model.final_project_dbt_group4.stg_data: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.stg_data"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`stg_data`
+  OPTIONS()
+  as 
+
+select
+    md5( timestamp || nameOrig || nameDest || type || amount) as id_transaction,
+    md5( nameOrig || oldbalanceOrg || newbalanceOrig ) as id_orig,
+    md5( nameDest || oldbalanceDest || newbalanceDest ) as id_dest,
+
+    CAST(timestamp AS datetime) AS timestamp,
+    CAST(amount AS numeric) AS amount,
+
+    type AS transaction_type,
+
+    case type
+        when 'PAYMENT' then 1
+        when 'CASH_OUT' then 2
+        when 'CASH_IN' then 3
+        when 'TRANSFER' then 4
+        when 'DEBIT' then 5
+    end AS id_type,
+
+    nameOrig,
+
+    CAST(oldbalanceOrg AS numeric) AS oldbalanceOrg,
+    CAST(newbalanceOrig AS numeric) AS newbalanceOrig,
+
+    nameDest,
+    CAST(oldbalanceDest AS numeric) AS oldbalanceDest,
+    CAST(newbalanceDest AS numeric) AS newbalanceDest,
+    CAST(isFraud AS integer) AS isFraud,
+    CAST(isFlaggedFraud AS integer) AS isFlaggedFraud,
+
+from `final-project-df11`.`dbt_final_project_g4`.`raw_data_project`;
+
+
+[0m18:23:08.527254 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:bc13def6-05a9-4f2a-9b8f-4e5af6268093&page=queryresults
+[0m18:23:09.247790 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.stg_data (execute): 18:23:06.814830 => 18:23:09.247279
+[0m18:23:09.249553 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc6bbf40>]}
+[0m18:23:09.250596 [info ] [Thread-1 (]: 1 of 8 OK created sql view model dbt_final_project_g4.stg_data ................. [[32mCREATE VIEW (0 processed)[0m in 2.59s]
+[0m18:23:09.251538 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.stg_data
+[0m18:23:09.252811 [debug] [Thread-3 (]: Began running node model.final_project_dbt_group4.dim_table_dest
+[0m18:23:09.253697 [info ] [Thread-3 (]: 2 of 8 START sql view model dbt_final_project_g4.dim_table_dest ................ [RUN]
+[0m18:23:09.255277 [debug] [Thread-2 (]: Began running node model.final_project_dbt_group4.dim_table_orig
+[0m18:23:09.256538 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.final_project_dbt_group4.dim_table_dest'
+[0m18:23:09.257239 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.dim_table_type
+[0m18:23:09.258055 [info ] [Thread-2 (]: 3 of 8 START sql table model dbt_final_project_g4.dim_table_orig ............... [RUN]
+[0m18:23:09.258995 [debug] [Thread-3 (]: Began compiling node model.final_project_dbt_group4.dim_table_dest
+[0m18:23:09.260244 [info ] [Thread-1 (]: 4 of 8 START sql view model dbt_final_project_g4.dim_table_type ................ [RUN]
+[0m18:23:09.262605 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.final_project_dbt_group4.dim_table_orig'
+[0m18:23:09.270737 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.stg_data, now model.final_project_dbt_group4.dim_table_type)
+[0m18:23:09.272543 [debug] [Thread-3 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_dest"
+[0m18:23:09.274135 [debug] [Thread-2 (]: Began compiling node model.final_project_dbt_group4.dim_table_orig
+[0m18:23:09.275977 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.dim_table_type
+[0m18:23:09.287577 [debug] [Thread-2 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_orig"
+[0m18:23:09.293519 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.dim_table_type"
+[0m18:23:09.294658 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.dim_table_dest (compile): 18:23:09.263825 => 18:23:09.294128
+[0m18:23:09.297079 [debug] [Thread-3 (]: Began executing node model.final_project_dbt_group4.dim_table_dest
+[0m18:23:09.305614 [debug] [Thread-3 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_dest"
+[0m18:23:09.306966 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.dim_table_orig (compile): 18:23:09.277709 => 18:23:09.306332
+[0m18:23:09.308619 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.dim_table_type (compile): 18:23:09.288535 => 18:23:09.308116
+[0m18:23:09.309677 [debug] [Thread-2 (]: Began executing node model.final_project_dbt_group4.dim_table_orig
+[0m18:23:09.310527 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.dim_table_type
+[0m18:23:09.311132 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:23:09.325999 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_type"
+[0m18:23:09.332446 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:23:09.335445 [debug] [Thread-3 (]: On model.final_project_dbt_group4.dim_table_dest: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_dest"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`dim_table_dest`
+  OPTIONS()
+  as 
+
+SELECT
+    DISTINCT(id_dest),
+    nameDest,
+    oldbalanceDest,
+    newbalanceDest
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`;
+
+
+[0m18:23:09.336528 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:23:09.400773 [debug] [Thread-1 (]: On model.final_project_dbt_group4.dim_table_type: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_type"} */
+
+
+  create or replace view `final-project-df11`.`dbt_final_project_g4`.`dim_table_type`
+  OPTIONS()
+  as 
+
+SELECT
+    DISTINCT(id_type),
+    transaction_type
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`;
+
+
+[0m18:23:10.827996 [debug] [Thread-2 (]: Writing runtime sql for node "model.final_project_dbt_group4.dim_table_orig"
+[0m18:23:10.829655 [debug] [Thread-2 (]: On model.final_project_dbt_group4.dim_table_orig: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.dim_table_orig"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`dim_table_orig`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    DISTINCT(id_orig),
+    nameOrig,
+    oldbalanceOrg,
+    newbalanceOrig
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data`
+    );
+  
+[0m18:23:11.464191 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:b38574c0-c493-4ab6-8a16-c4d4974992b3&page=queryresults
+[0m18:23:11.474098 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:2303ee0e-f188-45dc-92cd-1a6f1b44c478&page=queryresults
+[0m18:23:11.562174 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:538e7ee0-90b4-4766-8904-e4b3f1ae3b07&page=queryresults
+[0m18:23:12.117696 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.dim_table_type (execute): 18:23:09.322199 => 18:23:12.117402
+[0m18:23:12.118765 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cb8c80af0>]}
+[0m18:23:12.119696 [info ] [Thread-1 (]: 4 of 8 OK created sql view model dbt_final_project_g4.dim_table_type ........... [[32mCREATE VIEW (0 processed)[0m in 2.85s]
+[0m18:23:12.120529 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.dim_table_type
+[0m18:23:12.140373 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.dim_table_dest (execute): 18:23:09.298738 => 18:23:12.140088
+[0m18:23:12.141354 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc625510>]}
+[0m18:23:12.142085 [info ] [Thread-3 (]: 2 of 8 OK created sql view model dbt_final_project_g4.dim_table_dest ........... [[32mCREATE VIEW (0 processed)[0m in 2.89s]
+[0m18:23:12.142890 [debug] [Thread-3 (]: Finished running node model.final_project_dbt_group4.dim_table_dest
+[0m18:23:22.034256 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.dim_table_orig (execute): 18:23:09.311595 => 18:23:22.033921
+[0m18:23:22.035887 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cb8c83e50>]}
+[0m18:23:22.037346 [info ] [Thread-2 (]: 3 of 8 OK created sql table model dbt_final_project_g4.dim_table_orig .......... [[32mCREATE TABLE (6.4m rows, 172.8 MiB processed)[0m in 12.77s]
+[0m18:23:22.038429 [debug] [Thread-2 (]: Finished running node model.final_project_dbt_group4.dim_table_orig
+[0m18:23:22.039681 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.fact_table
+[0m18:23:22.040796 [info ] [Thread-1 (]: 5 of 8 START sql table model dbt_final_project_g4.fact_table ................... [RUN]
+[0m18:23:22.041741 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.dim_table_type, now model.final_project_dbt_group4.fact_table)
+[0m18:23:22.042274 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.fact_table
+[0m18:23:22.048148 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.fact_table"
+[0m18:23:22.049410 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.fact_table (compile): 18:23:22.042665 => 18:23:22.048958
+[0m18:23:22.050428 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.fact_table
+[0m18:23:22.055983 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:23:22.911949 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.fact_table"
+[0m18:23:22.913849 [debug] [Thread-1 (]: On model.final_project_dbt_group4.fact_table: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.fact_table"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT DISTINCT
+    stg.id_transaction AS id_transaction,
+    stg.timestamp AS date,
+    transaction_type.id_type AS id_type,
+    stg.amount AS amount,
+    orig.id_orig AS id_orig,
+    dest.id_dest AS id_dest,
+    stg.isFraud AS isFraud,
+    stg.isFlaggedFraud AS isFlaggedFraud,
+
+FROM `final-project-df11`.`dbt_final_project_g4`.`stg_data` AS stg
+
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_dest` AS dest
+    ON stg.id_dest = dest.id_dest
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_type` AS transaction_type
+    ON stg.id_type = transaction_type.id_type
+LEFT JOIN `final-project-df11`.`dbt_final_project_g4`.`dim_table_orig` AS orig
+    ON stg.id_orig = orig.id_orig
+    );
+  
+[0m18:23:23.595057 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:2697cfc3-75c6-4753-960f-3d60b26d9777&page=queryresults
+[0m18:23:42.857530 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.fact_table (execute): 18:23:22.051202 => 18:23:42.857157
+[0m18:23:42.858818 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc6fe560>]}
+[0m18:23:42.859970 [info ] [Thread-1 (]: 5 of 8 OK created sql table model dbt_final_project_g4.fact_table .............. [[32mCREATE TABLE (6.4m rows, 706.2 MiB processed)[0m in 20.82s]
+[0m18:23:42.860934 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.fact_table
+[0m18:23:42.862676 [debug] [Thread-2 (]: Began running node model.final_project_dbt_group4.cluster_by_fraud
+[0m18:23:42.863534 [debug] [Thread-3 (]: Began running node model.final_project_dbt_group4.cluster_by_payment
+[0m18:23:42.865806 [debug] [Thread-1 (]: Began running node model.final_project_dbt_group4.partition_date
+[0m18:23:42.864442 [info ] [Thread-2 (]: 6 of 8 START sql table model dbt_final_project_g4.cluster_by_fraud ............. [RUN]
+[0m18:23:42.868879 [info ] [Thread-3 (]: 7 of 8 START sql table model dbt_final_project_g4.cluster_by_payment ........... [RUN]
+[0m18:23:42.872960 [info ] [Thread-1 (]: 8 of 8 START sql table model dbt_final_project_g4.partition_date ............... [RUN]
+[0m18:23:42.876275 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.dim_table_orig, now model.final_project_dbt_group4.cluster_by_fraud)
+[0m18:23:42.879178 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.dim_table_dest, now model.final_project_dbt_group4.cluster_by_payment)
+[0m18:23:42.882208 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.final_project_dbt_group4.fact_table, now model.final_project_dbt_group4.partition_date)
+[0m18:23:42.884386 [debug] [Thread-2 (]: Began compiling node model.final_project_dbt_group4.cluster_by_fraud
+[0m18:23:42.886575 [debug] [Thread-3 (]: Began compiling node model.final_project_dbt_group4.cluster_by_payment
+[0m18:23:42.888462 [debug] [Thread-1 (]: Began compiling node model.final_project_dbt_group4.partition_date
+[0m18:23:42.906821 [debug] [Thread-2 (]: Writing injected SQL for node "model.final_project_dbt_group4.cluster_by_fraud"
+[0m18:23:42.908426 [debug] [Thread-3 (]: Writing injected SQL for node "model.final_project_dbt_group4.cluster_by_payment"
+[0m18:23:42.917602 [debug] [Thread-1 (]: Writing injected SQL for node "model.final_project_dbt_group4.partition_date"
+[0m18:23:42.920214 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.cluster_by_fraud (compile): 18:23:42.889785 => 18:23:42.919284
+[0m18:23:42.921800 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.cluster_by_payment (compile): 18:23:42.900592 => 18:23:42.921273
+[0m18:23:42.922882 [debug] [Thread-2 (]: Began executing node model.final_project_dbt_group4.cluster_by_fraud
+[0m18:23:42.924970 [debug] [Thread-3 (]: Began executing node model.final_project_dbt_group4.cluster_by_payment
+[0m18:23:42.927145 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.partition_date (compile): 18:23:42.909602 => 18:23:42.926098
+[0m18:23:42.940702 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:23:42.948384 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:23:42.950580 [debug] [Thread-1 (]: Began executing node model.final_project_dbt_group4.partition_date
+[0m18:23:43.095236 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:23:44.928952 [debug] [Thread-2 (]: Writing runtime sql for node "model.final_project_dbt_group4.cluster_by_fraud"
+[0m18:23:44.929861 [debug] [Thread-2 (]: On model.final_project_dbt_group4.cluster_by_fraud: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.cluster_by_fraud"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`cluster_by_fraud`
+      
+    
+    cluster by isFraud
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    *
+FROM
+    `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+    );
+  
+[0m18:23:44.934457 [debug] [Thread-1 (]: Writing runtime sql for node "model.final_project_dbt_group4.partition_date"
+[0m18:23:44.936872 [debug] [Thread-3 (]: Writing runtime sql for node "model.final_project_dbt_group4.cluster_by_payment"
+[0m18:23:44.937721 [debug] [Thread-3 (]: On model.final_project_dbt_group4.cluster_by_payment: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.cluster_by_payment"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`cluster_by_payment`
+      
+    
+    cluster by id_type
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    *
+FROM 
+    `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+    );
+  
+[0m18:23:44.938349 [debug] [Thread-1 (]: On model.final_project_dbt_group4.partition_date: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "final_project_dbt_group4", "target_name": "prod", "node_id": "model.final_project_dbt_group4.partition_date"} */
+
+  
+    
+
+    create or replace table `final-project-df11`.`dbt_final_project_g4`.`partition_date`
+      
+    partition by timestamp_trunc(date, day)
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+    *
+FROM
+    `final-project-df11`.`dbt_final_project_g4`.`fact_table`
+    );
+  
+[0m18:23:45.418768 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:035d2d0e-333c-4768-a8ea-2d858f0f370f&page=queryresults
+[0m18:23:45.530822 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:85d86855-acca-4224-a460-f12e4bc2cc36&page=queryresults
+[0m18:23:45.546450 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:8f0dc090-1d33-4049-bbee-1bf3b32ab94c&page=queryresults
+[0m18:23:51.311129 [debug] [Thread-3 (]: Timing info for model.final_project_dbt_group4.cluster_by_payment (execute): 18:23:42.941576 => 18:23:51.310831
+[0m18:23:51.312625 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc5a8e20>]}
+[0m18:23:51.313587 [info ] [Thread-3 (]: 7 of 8 OK created sql table model dbt_final_project_g4.cluster_by_payment ...... [[32mCREATE TABLE (6.4m rows, 618.9 MiB processed)[0m in 8.43s]
+[0m18:23:51.314716 [debug] [Thread-3 (]: Finished running node model.final_project_dbt_group4.cluster_by_payment
+[0m18:23:51.317683 [debug] [Thread-1 (]: Timing info for model.final_project_dbt_group4.partition_date (execute): 18:23:42.957065 => 18:23:51.317327
+[0m18:23:51.319419 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc6fc7f0>]}
+[0m18:23:51.320321 [info ] [Thread-1 (]: 8 of 8 OK created sql table model dbt_final_project_g4.partition_date .......... [[32mCREATE TABLE (6.4m rows, 618.9 MiB processed)[0m in 8.44s]
+[0m18:23:51.321639 [debug] [Thread-1 (]: Finished running node model.final_project_dbt_group4.partition_date
+[0m18:23:51.331328 [debug] [Thread-2 (]: Timing info for model.final_project_dbt_group4.cluster_by_fraud (execute): 18:23:42.928139 => 18:23:51.330699
+[0m18:23:51.333636 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6aa1d263-aa17-4fc7-a2c0-423f8468950a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cb8cb1960>]}
+[0m18:23:51.335538 [info ] [Thread-2 (]: 6 of 8 OK created sql table model dbt_final_project_g4.cluster_by_fraud ........ [[32mCREATE TABLE (6.4m rows, 618.9 MiB processed)[0m in 8.46s]
+[0m18:23:51.336867 [debug] [Thread-2 (]: Finished running node model.final_project_dbt_group4.cluster_by_fraud
+[0m18:23:51.340130 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:23:51.340840 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.partition_date' was properly closed.
+[0m18:23:51.341409 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.cluster_by_payment' was properly closed.
+[0m18:23:51.341934 [debug] [MainThread]: Connection 'model.final_project_dbt_group4.cluster_by_fraud' was properly closed.
+[0m18:23:51.342545 [info ] [MainThread]: 
+[0m18:23:51.343434 [info ] [MainThread]: Finished running 3 view models, 5 table models in 0 hours 0 minutes and 46.34 seconds (46.34s).
+[0m18:23:51.348960 [debug] [MainThread]: Command end result
+[0m18:23:51.363568 [info ] [MainThread]: 
+[0m18:23:51.364611 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:23:51.365347 [info ] [MainThread]: 
+[0m18:23:51.366069 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=0 SKIP=0 TOTAL=8
+[0m18:23:51.367666 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 47.12055, "process_user_time": 8.934287, "process_kernel_time": 1.951557, "process_mem_max_rss": "143544", "process_out_blocks": "2064", "process_in_blocks": "0"}
+[0m18:23:51.368714 [debug] [MainThread]: Command `dbt run` succeeded at 18:23:51.368467 after 47.12 seconds
+[0m18:23:51.369548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cc05efa00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc625c00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0cbc9cb6a0>]}
+[0m18:23:51.370246 [debug] [MainThread]: Flushing usage events
+[0m21:51:55.964867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d4255a500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d405df3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d405df370>]}
+
+
+============================== 21:51:55.970404 | 228c6ead-cb46-49c6-9082-388268ec19e4 ==============================
+[0m21:51:55.970404 [info ] [MainThread]: Running with dbt=1.7.0
+[0m21:51:55.971186 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/logs', 'profiles_dir': '/home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:51:55.971722 [info ] [MainThread]: dbt version: 1.7.0
+[0m21:51:55.972162 [info ] [MainThread]: python version: 3.10.12
+[0m21:51:55.972572 [info ] [MainThread]: python path: /home/avalon/Data-Fellowship-11/dbt_env/dbt/bin/python
+[0m21:51:55.973011 [info ] [MainThread]: os info: Linux-5.10.16.3-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m21:51:57.430184 [info ] [MainThread]: Using profiles dir at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4
+[0m21:51:57.431056 [info ] [MainThread]: Using profiles.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/profiles.yml
+[0m21:51:57.431811 [info ] [MainThread]: Using dbt_project.yml file at /home/avalon/Data-Fellowship-11/dbt_env/dbt_project/final_project_dbt_group4/dbt_project.yml
+[0m21:51:57.433749 [info ] [MainThread]: adapter type: bigquery
+[0m21:51:57.434954 [info ] [MainThread]: adapter version: 1.7.0
+[0m21:51:57.534711 [info ] [MainThread]: Configuration:
+[0m21:51:57.535307 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:51:57.535745 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m21:51:57.536167 [info ] [MainThread]: Required dependencies:
+[0m21:51:57.536640 [debug] [MainThread]: Executing "git --help"
+[0m21:51:57.552714 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:51:57.553307 [debug] [MainThread]: STDERR: "b''"
+[0m21:51:57.553683 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:51:57.554151 [info ] [MainThread]: Connection:
+[0m21:51:57.554669 [info ] [MainThread]:   method: service-account
+[0m21:51:57.555116 [info ] [MainThread]:   database: final-project-df11
+[0m21:51:57.555559 [info ] [MainThread]:   execution_project: final-project-df11
+[0m21:51:57.556001 [info ] [MainThread]:   schema: dbt_final_project_g4
+[0m21:51:57.556849 [info ] [MainThread]:   location: None
+[0m21:51:57.557373 [info ] [MainThread]:   priority: interactive
+[0m21:51:57.557815 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m21:51:57.558251 [info ] [MainThread]:   impersonate_service_account: None
+[0m21:51:57.558709 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m21:51:57.559151 [info ] [MainThread]:   job_retries: 1
+[0m21:51:57.560164 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m21:51:57.560851 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m21:51:57.561505 [info ] [MainThread]:   keyfile: /home/avalon/Data-Fellowship-11/dbt_env/service-accounts/service-account-g4-dbt.json
+[0m21:51:57.562518 [info ] [MainThread]:   timeout_seconds: 300
+[0m21:51:57.563517 [info ] [MainThread]:   refresh_token: None
+[0m21:51:57.564843 [info ] [MainThread]:   client_id: None
+[0m21:51:57.565719 [info ] [MainThread]:   token_uri: None
+[0m21:51:57.566455 [info ] [MainThread]:   dataproc_region: None
+[0m21:51:57.567073 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m21:51:57.567948 [info ] [MainThread]:   gcs_bucket: None
+[0m21:51:57.569114 [info ] [MainThread]:   dataproc_batch: None
+[0m21:51:57.570004 [info ] [MainThread]: Registered adapter: bigquery=1.7.0
+[0m21:51:57.571048 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m21:51:57.571508 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:51:57.574519 [debug] [MainThread]: On debug: select 1 as id
+[0m21:51:58.833450 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=final-project-df11&j=bq:US:34ea0443-4528-4764-bfe1-1dae54b204bd&page=queryresults
+[0m21:51:59.712887 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m21:51:59.713477 [info ] [MainThread]: [32mAll checks passed![0m
+[0m21:51:59.716537 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.8056102, "process_user_time": 4.288197, "process_kernel_time": 0.785461, "process_mem_max_rss": "168052", "process_in_blocks": "160536", "process_out_blocks": "24"}
+[0m21:51:59.717259 [debug] [MainThread]: Command `dbt debug` succeeded at 21:51:59.717098 after 3.81 seconds
+[0m21:51:59.717660 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:51:59.718065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d4255a500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d27ff3e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d2810ef80>]}
+[0m21:51:59.718556 [debug] [MainThread]: Flushing usage events
